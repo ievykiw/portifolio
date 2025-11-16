@@ -6,6 +6,13 @@ st.set_page_config(
     layout="wide"
 )
 
+def experienceModeler(experienceName, experienceLevel, experienceDateStart, experienceDateEnd, experienceDescription, experienceAbilities):
+    containertExperience = st.container(border=True)
+    badges = " ".join([f":red-badge[{ability}]" for ability in experienceAbilities])
+    containertExperience.html(f"""<h1>{experienceName} - {experienceLevel}</h1>\n<p style="font-size: 1.2em">{experienceDescription}\n""")
+    containertExperience.markdown(f"{badges}\n\n Data Início: :red[{experienceDateStart}]  |   Data Fim: :red[{experienceDateEnd}]\n")
+
+
 with st.sidebar:
     profileImage = st.image(".//assets//file.jpeg", width='content', caption="Para ser grande, sê inteiro.")
     st.markdown("### >>> Sistemas de Informação\n### >>> Ciência de Dados\n### >>> Tec. em Eletrônica\n")
@@ -58,3 +65,22 @@ with col2:
         >>><a href="https://www.kaggle.com/ievykiw" style="font-size: 20px; text-decoration: none; color: white; padding: 5px;"> Kaggle </a>
         </p>
     """)
+
+
+workOptions = ["Experiência", "Projetos", "Eventos", "Certificações"]
+workOptionsSelect = st.segmented_control("Selecione uma Opção", workOptions, selection_mode="single", default='Experiência')
+
+if (workOptionsSelect == "Experiência"):
+  experienceModeler("Lorem Ipsum 1", "Pleno", "09/2023", "01/2025", "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem Ipsum Lorem Ipsum", ["Looker Studio", "Power BI", "CRM", "Automação"])
+  experienceModeler("Lorem Ipsum 2", "Junior", "02/2021", "06/2022", "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem Ipsum Lorem Ipsum", ["Excel", "Python", "SQL", "Pandas"])
+
+elif (workOptionsSelect == "Projetos"):
+    st.markdown(f"Opção selecionada foi: {workOptionsSelect}")
+elif (workOptionsSelect == "Eventos"):
+    st.markdown(f"Opção selecionada foi: {workOptionsSelect}")
+elif (workOptionsSelect == "Certificações"):
+    st.markdown(f"Opção selecionada foi: {workOptionsSelect}")
+
+
+
+

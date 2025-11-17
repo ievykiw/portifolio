@@ -6,11 +6,21 @@ st.set_page_config(
     layout="wide"
 )
 
-def experienceModeler(experienceName, experienceLevel, experienceDateStart, experienceDateEnd, experienceDescription, experienceAbilities):
+def experienceModeler(experienceName, experienceLevel, experienceDateStart, experienceDateEnd, experienceDescription, experienceTools, experienceSkills):
     containertExperience = st.container(border=True)
-    badges = " ".join([f":red-badge[{ability}]" for ability in experienceAbilities])
+    badgesTools = " ".join([f":red-badge[{ability}]" for ability in experienceTools])
+    badgesSkills = " ".join([f":gray-badge[{ability}]" for ability in experienceSkills])
+
     containertExperience.html(f"""<h1>{experienceName} - {experienceLevel}</h1>\n<p style="font-size: 1.2em">{experienceDescription}\n""")
-    containertExperience.markdown(f"{badges}\n\n Data Início: :red[{experienceDateStart}]  |   Data Fim: :red[{experienceDateEnd}]\n")
+    containertExperience.markdown(f"{badgesTools}\n\n{badgesSkills}\n\n Data Início: :red[{experienceDateStart}]  |   Data Fim: :red[{experienceDateEnd}]\n")
+
+def projectModeler(projectName, projectDate, projectDescription, projectTools, projectSkills):
+    containertProject = st.container(border=True)
+    badgesTools = " ".join([f":red-badge[{ability}]" for ability in projectTools])
+    badgesSkills = " ".join([f":gray-badge[{ability}]" for ability in projectSkills])
+
+    containertProject.html(f"""<h1>{projectName}</h1>\n<p style="font-size: 1.2em">{projectDescription}\n""")
+    containertProject.markdown(f"{badgesTools}\n\n{badgesSkills}\n\n Realizado em: :red[{projectDate}]\n")
 
 
 with st.sidebar:
@@ -71,11 +81,11 @@ workOptions = ["Experiência", "Projetos", "Eventos", "Certificações"]
 workOptionsSelect = st.segmented_control("Selecione uma Opção", workOptions, selection_mode="single", default='Experiência')
 
 if (workOptionsSelect == "Experiência"):
-  experienceModeler("Lorem Ipsum 1", "Pleno", "09/2023", "01/2025", "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem Ipsum Lorem Ipsum", ["Looker Studio", "Power BI", "CRM", "Automação"])
-  experienceModeler("Lorem Ipsum 2", "Junior", "02/2021", "06/2022", "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem Ipsum Lorem Ipsum", ["Excel", "Python", "SQL", "Pandas"])
+  experienceModeler("Lorem Ipsum 1", "Pleno", "09/2023", "01/2025", "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem Ipsum Lorem Ipsum", ["Looker Studio", "Power BI", "CRM", "Automação"], ["Planejamento", "Execução"])
+  experienceModeler("Lorem Ipsum 2", "Junior", "02/2021", "06/2022", "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem Ipsum Lorem Ipsum", ["Excel", "Python", "SQL", "Pandas"], ["Visão de Negócio", "Produção"])
 
 elif (workOptionsSelect == "Projetos"):
-    st.markdown(f"Opção selecionada foi: {workOptionsSelect}")
+    projectModeler("Lorem Ipsum 1", "02/2024", "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem Ipsum Lorem Ipsum",["Paint", ".NET", "Java"], ["Comunicação", "Liderança", "Gestão de Projetos"])
 elif (workOptionsSelect == "Eventos"):
     st.markdown(f"Opção selecionada foi: {workOptionsSelect}")
 elif (workOptionsSelect == "Certificações"):

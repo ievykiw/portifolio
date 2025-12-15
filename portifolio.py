@@ -78,7 +78,7 @@ def certificationModeler(certificationTitle, certificationDate, certificationSou
 # Conteúdo textual da página, no geral utilizando linguagem markdown e html
 with st.sidebar:
     profileImage = st.image(".//assets//CampusParty2025.jpeg", width='content', caption="Para ser grande, sê inteiro.")
-    st.markdown("### ▶ Sistemas de Informação\n### ▶ Ciência de Dados\n### ▶ Tec. em Eletrônica\n")
+    st.markdown("### ▶ Sistemas de Informação\n### ▶ Ciência de Dados\n### ▶ Tec. em Eletrônica\n### ▶ VP da LADATA\n")
     st.markdown("#### :material/location_on: Sergipe, Brasil")
 
     st.markdown("---")
@@ -148,8 +148,29 @@ workOptionsSelect = st.segmented_control("Selecione uma Opção", workOptions, s
 
 # Informação de Experiência Profissional
 if (workOptionsSelect == "Experiência"):
-  experienceModeler("Lorem Ipsum 1", "Pleno", "09/2023", "01/2025", "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem Ipsum Lorem Ipsum", ["Looker Studio", "Power BI", "CRM", "Automação"], ["Planejamento", "Execução"])
-  experienceModeler("Lorem Ipsum 2", "Junior", "02/2021", "06/2022", "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem Ipsum Lorem Ipsum", ["Excel", "Python", "SQL", "Pandas"], ["Visão de Negócio", "Produção"])
+  experienceModeler("Desenvolvedor de Sistemas",
+                    "Júnior",
+                    "01/2025",
+                    "11/2025", 
+                    """
+                    Atuei no desenvolvimento e manutenção de sistemas internos alinhado às necessidades operacionais da empresa.
+                    Automatizei fluxos e rotinas internas, aumentando dessa forma, a eficiência dos colaboradores e reduzindo falhas nos processos.
+                    Em comjunto com o time de dados, colaborei com a análise de dados dos resultados internos, auxiliando na otimização de processos e performance dos sistemas, além de identificar gargalos.
+                    """,
+                     ["HTML", "CSS", "JS", "PHP", "Python", "Selenium", "PyAutoGUI", "MariaDB", "Pandas", "MatPlotLib", "Seaborn", "CRUD"],
+                     ["Planejamento", "Execução", "Apresentação de MVP", "Brainstorm", "Gestão", "Design Thinking", "Mapeamento de Processos"])
+  
+  experienceModeler("Gestor de Tráfego",
+                    "Pleno",
+                    "08/2023",
+                    "01/2025",
+                    """
+                    Construí automações para coleta e integração de dados de diversas plataformas de anúncios, como Meta ADS, Google ADS, etc. 
+                    Além disso, desenvolvi dashboards interativos em plataformas de BI para monitorar indicadores de desempenho e apoiar decisões estratégicas.
+                    Também desenvolvi automações de Workflow integrados aos CRMs dos clientes via webhook.
+                    """,
+                    [ "Meta ADS", "Google ADS", "Make", "Excel", "Looker Studio", "Power BI", "API"], 
+                    ["Visão de Negócio", "Comunicação", "Data Storytelling", "Tomada de Decisão", "Jornada do Cliente", "Resolução de Problemas", "Raciocínio Lógico e Analítico"])
 
 # Informação de Projetos
 elif (workOptionsSelect == "Projetos"):
@@ -157,14 +178,66 @@ elif (workOptionsSelect == "Projetos"):
 
 # Informação de Eventos
 elif (workOptionsSelect == "Eventos"):
-    eventModeler("Lorem Ipsum 1", "09/2023", "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem Ipsum Lorem Ipsum", ["Comunicação", "Liderança", "Gestão de Projetos"], ".//assets//CampusParty2025.jpeg")
-    eventModeler("Lorem Ipsum 2", "19/2025", "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem IpsumLorem IpsumLorem Ipsum Lorem Ipsum", ["Comunicação", "Liderança", "Gestão de Projetos"], ".//assets//CampusParty2025.jpeg")
+    eventModeler("MIB - Maratona de Inovação Para o Bem",
+                 "12/2025",
+                 """
+                 
+                 """, 
+                 ["Comunicação", "Liderança", "Gestão de Projetos"],
+                 ".//assets//MIB2025.png")
+    
+    eventModeler("Workshop Power BI - Sitemas de Apoio à Decisão",
+                 "12/2025",
+                 """
+                 """, 
+                 ["Comunicação", "Liderança", "Gestão de Projetos"],
+                 ".//assets//sistemasdeapoio.jpg")
+
+    eventModeler("Workshop Power BI - GEPACH",
+                 "11/2025",
+                 """
+                 """, 
+                 ["Comunicação", "Liderança", "Gestão de Projetos"],
+                 ".//assets//gepach.jpeg")
+
+    eventModeler("Campus Party - CP Weekend Aracaju",
+                 "10/2025",
+                 """
+                 """, 
+                 ["Comunicação", "Liderança", "Gestão de Projetos"],
+                 ".//assets//cpweekend.png")
+    
+    eventModeler("ERBASE - Futebol de Robôs IFS",
+                 "08/2025",
+                 """
+                 """, 
+                 ["Comunicação", "Liderança", "Gestão de Projetos"],
+                 ".//assets//ERBASE.png")
+    
+
 
 # Informação de Certificados
 elif (workOptionsSelect == "Certificações"):
-    certificationModeler("Lorem Ipsum 1", "09/2023", "OBR", ".//assets//OBREstadual.jpg")
-    certificationModeler("Lorem Ipsum 2", "09/2023", "MIB", ".//assets//OBREstadual.jpg")
-    certificationModeler("Lorem Ipsum 3", "09/2023", "UFS", ".//assets//OBREstadual.jpg")
+    certificationModeler("Análise de Dados Geoespaciais usando o GeoDa",
+                         "11/2025",
+                         "UFS",
+                         ".//assets//Certificado_GeoDa.png")
+    
+    certificationModeler("Minicurso de Análise de Dados com Power BI", 
+                         "11/2025",
+                         "UFS",
+                         ".//assets//Certificado_GEPACH.png")
+    
+    certificationModeler("Ciência de Dados para Sistemas Embarcados",
+                         "12/2024",
+                         "UFS",
+                         ".//assets//Certificado_Embarcados.png")
+    
+    certificationModeler("Aplicação de Python na Engenharia Civil",
+                         "12/2024",
+                         "UFS",
+                         ".//assets//Certificado_PythonEC.png")
+
 
 
 
